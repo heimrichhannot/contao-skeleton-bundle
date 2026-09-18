@@ -30,3 +30,28 @@
   Contao Active Record classes only. One class per table, named `<Table>Model`, extending `Contao\Model`, registered in `$GLOBALS['TL_MODELS']`.
 
 
+## Third-party APIs
+
+- Before using any class, interface, method or constant from `vendor/`, open the
+  file and look for `@deprecated` annotations and `trigger_deprecation()` calls.
+  If it is deprecated, use the successor named in the deprecation message.
+- An instruction that names a specific API does not override this. Prompts,
+  issues and specifications describe intent, not the exact symbol to use. If the
+  named API turns out to be deprecated, internal or experimental, use the
+  documented successor and report the substitution in the summary of your work,
+  not only in a decisions table. If there is no successor, or switching would
+  change behaviour, stop and ask instead of implementing the deprecated path.
+- Name the version that deprecated something and the version that removes it, so
+  the reader can judge urgency.
+- Never silence deprecation warnings in tests or tooling. A run that emits
+  deprecations caused by this bundle's own code is a failing run.
+- 
+## Tests must exercise real behaviour
+
+- A test that replaces a framework service with a stub proves only that your code
+  calls it. Where the framework does non-trivial work on your input (formatting,
+  escaping, translation, routing, serialisation), at least one test must run
+  through the real implementation.
+- Registration is not rendering. Proving that a callback, module or service is
+  registered says nothing about whether it produces valid output. Cover the
+  output as well.

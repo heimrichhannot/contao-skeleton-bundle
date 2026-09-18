@@ -1,4 +1,5 @@
 - Read and follow `AGENTS.local.md` in the repository root if it exists for additional local instructions.
+- Read and follow `~/Kunden/github/contao-skeleton-bundle` if it exists for latest company-wide instructions.
 
 ## Coding standards
 - Use Symfony PHP Translation Format for Contao and Other Translations where possible when creating new files.

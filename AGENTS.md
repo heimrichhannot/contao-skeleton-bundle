@@ -56,3 +56,12 @@
 - Registration is not rendering. Proving that a callback, module or service is
   registered says nothing about whether it produces valid output. Cover the
   output as well.
+
+## Changelog
+
+- Orientiere dich an [Keep a Changelog](https://keepachangelog.com/de/), verwende jedoch keine separaten Überschriften für Änderungsarten.
+- Führe unveröffentlichte Änderungen unter `## [Unreleased]` ganz oben.
+- Verwende für Releases `## [Versionsnummer] - YYYY-MM-DD`, neueste Version zuerst.
+- Schreibe jede Änderung als Listenpunkt mit Kategorie und Doppelpunkt, z. B. `- Fixed: Beschreibung`.
+- Kategorien: `Added` (neue Features), `Changed` (bestehende Funktionalität), `Deprecated` (zur Entfernung vorgesehen), `Removed` (entfernte Features), `Fixed` (Bugfixes), `Security` (geschlossene Sicherheitslücken).
+- Überführe beim Release die unveröffentlichten Einträge in den neuen Versionsabschnitt und behalte darüber einen leeren Abschnitt `## [Unreleased]`.

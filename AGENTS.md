@@ -18,6 +18,7 @@
 - Avoid trivial wrapper methods that only delegate to another method or wrap a simple expression without adding meaningful behavior. Keep such calls inline when the wrapper merely renames the underlying operation. Extract a method when it encapsulates meaningful logic, removes substantive duplication, or establishes a necessary extension or integration point. A descriptive name alone does not justify a one-line wrapper.
 - Do not give your own concepts Contao-reserved names. For example the class suffix `*Model`and the directory `src/Model/` belong to Contao Active Record classes (`Contao\Model` subclasses registered in `$GLOBALS['TL_MODELS']`).
 - Create Content Elements, not Frontend Module (Frontend Modules are a deprecated concept in contao)
+- Derive palettes for content elements (and other core tables) from the core DCA of the installed Contao version, e.g. the `headline` palette in `vendor/contao/core-bundle/contao/dca/tl_content.php`. Do not copy palettes from existing elements in the project or other bundles; they may still contain fields removed in Contao 5 (`guests`, `cssClass`). Every field in a palette or subpalette must exist in the table's `fields`.
 - Do not create .html5 templates if not explicit required. Always create Twig templates in the contao managed namespace.
 
 ## Structure

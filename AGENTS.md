@@ -3,6 +3,7 @@
 
 ## Coding standards
 - Use Symfony PHP Translation Format for Contao and Other Translations where possible when creating new files.
+- Omit explicit `label` entries in Contao DCA field definitions. Contao resolves field labels automatically from the table's translations; define the labels and help text in the Symfony PHP translation files.
 - Use Doctrine Schema Representation for Contao DCA SQL Column Definition.
 - Do not define a custom targetColumn for Contao DCA virtual fields unless explicitly requested.
 - Use AbstractBundle class for the bundle class, if possible
@@ -20,6 +21,7 @@
 - Create Content Elements, not Frontend Module (Frontend Modules are a deprecated concept in contao)
 - Derive palettes for content elements (and other core tables) from the core DCA of the installed Contao version, e.g. the `headline` palette in `vendor/contao/core-bundle/contao/dca/tl_content.php`. Do not copy palettes from existing elements in the project or other bundles; they may still contain fields removed in Contao 5 (`guests`, `cssClass`). Every field in a palette or subpalette must exist in the table's `fields`.
 - Do not create .html5 templates if not explicit required. Always create Twig templates in the contao managed namespace.
+- In Contao Twig templates, build HTML attributes with the `attrs()` Twig function (`Contao\CoreBundle\String\HtmlAttributes`) instead of hand-written attribute strings whenever an element has more than one static class, data or ARIA attributes, dynamic values, or conditional attributes. Chain `.addClass()`, `.set(name, value, condition)`, `.setIfExists()` and `.mergeWith()`; set boolean attributes with `.set('hidden')`, pass JSON with `.set('data-x', value|json_encode)`, and let `attrs()` handle escaping (do not add `|e` or `|raw`). When a template receives attributes, start from them: `attrs(attributes|default)` or `attrs(cssID)`. For repeated elements, define a base once (`{% set button = attrs().set('type', 'button').addClass('btn') %}`) and derive each element with `attrs(button).set(...)`; `attrs()` copies, so the base stays unchanged. Elements with a single static class and no other attributes may stay plain HTML. In PHP, pass `HtmlAttributes` objects to templates instead of prebuilt attribute strings.
 
 ## Structure
 - `contao/templates/`

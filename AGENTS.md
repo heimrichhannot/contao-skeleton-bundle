@@ -2,6 +2,7 @@
 - Read and follow `~/Kunden/github/contao-skeleton-bundle` if it exists for latest company-wide instructions.
 
 ## Coding standards
+- Do not over-engineer!
 - Use Symfony PHP Translation Format for Contao and Other Translations where possible when creating new files.
 - Omit explicit `label` entries in Contao DCA field definitions. Contao resolves field labels automatically from the table's translations; define the labels and help text in the Symfony PHP translation files.
 - Use Doctrine Schema Representation for Contao DCA SQL Column Definition.

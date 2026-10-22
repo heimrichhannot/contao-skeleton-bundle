@@ -25,8 +25,14 @@
 - In Contao Twig templates, build HTML attributes with the `attrs()` Twig function (`Contao\CoreBundle\String\HtmlAttributes`) instead of hand-written attribute strings whenever an element has more than one static class, data or ARIA attributes, dynamic values, or conditional attributes. Chain `.addClass()`, `.set(name, value, condition)`, `.setIfExists()` and `.mergeWith()`; set boolean attributes with `.set('hidden')`, pass JSON with `.set('data-x', value|json_encode)`, and let `attrs()` handle escaping (do not add `|e` or `|raw`). When a template receives attributes, start from them: `attrs(attributes|default)` or `attrs(cssID)`. For repeated elements, define a base once (`{% set button = attrs().set('type', 'button').addClass('btn') %}`) and derive each element with `attrs(button).set(...)`; `attrs()` copies, so the base stays unchanged. Elements with a single static class and no other attributes may stay plain HTML. In PHP, pass `HtmlAttributes` objects to templates instead of prebuilt attribute strings.
 
 ## Structure
+- `.docs`
+   Documentation, Plans, Reports and similary (mostly AI creates). Not the user documentation.
 - `contao/templates/`
     Store all templates here, also twig (not in symfony templates folder). If the extension has .html5 templates, use the `contao/templates/twig` folder for putting twig templates. The twig root folder must contain a `.twig-root` file. Twig-Templates within that folder can be addressed with the `@Contao` twig namespace. 
+- `docs`
+    User documtentions, if more needed then the readme
+- `docs/img`
+    Images for Readme and other user documentation.
 - `src/EventListener/Cron/`
     Cronjobs
 - `src/EventListener/DataContainer/[Table]/`

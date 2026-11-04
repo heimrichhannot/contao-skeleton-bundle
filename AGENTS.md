@@ -1,8 +1,43 @@
 - Read and follow `AGENTS.local.md` in the repository root if it exists for additional local instructions.
 - Read and follow `~/Kunden/github/contao-skeleton-bundle` if it exists for latest company-wide instructions.
 
+## Working principles
+
+Apply these principles proportionately. Small, obvious changes do not
+require a formal plan.
+
+### Think before coding
+
+- Inspect the relevant code and instructions before proposing changes.
+- State material assumptions and explain consequential tradeoffs.
+- Ask when ambiguity affects scope, behavior or compatibility. Resolve
+  routine implementation choices independently.
+- Suggest a simpler approach when it meets the same requirements.
+
+### Simplicity first
+
+- Implement the smallest complete solution that meets the request.
+- Reuse existing project and framework capabilities.
+- Add abstractions, dependencies and configuration only when justified
+  by current requirements or a necessary integration point.
+
+### Focused changes
+
+- Keep every change connected to the request or an applicable project rule.
+- Preserve unrelated user changes and existing conventions.
+- Avoid unrelated refactoring, formatting and cleanup.
+- Remove code made unused by your changes; report unrelated findings separately.
+
+### Verifiable execution
+
+- Define observable success criteria before implementation.
+- For multi-step work, give a brief plan with relevant verification.
+- Reproduce bugs before fixing them where practical.
+- Run appropriate checks in the prescribed runtime.
+- Continue until the criteria are met or a concrete blocker remains.
+- Report what was verified and any remaining limitations.
+
 ## Coding standards
-- Do not over-engineer!
 - Use Symfony PHP Translation Format for Contao and Other Translations where possible when creating new files.
 - Omit explicit `label` entries in Contao DCA field definitions. Contao resolves field labels automatically from the table's translations; define the labels and help text in the Symfony PHP translation files.
 - Use Doctrine Schema Representation for Contao DCA SQL Column Definition.

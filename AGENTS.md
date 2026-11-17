@@ -113,3 +113,7 @@ require a formal plan.
 - Beschreibe die Änderung aus Sicht des Nutzers oder Integrators, nicht ihre Umsetzung. Ein Eintrag ist in der Regel ein Satz.
 - Lass Klassennamen, CSS-Eigenschaften, Methoden, Dateinamen, Ursachenanalyse und Lösungsweg weg. Das gehört in die Dokumentation und in die Commit-Message.
 - Nenne technische Bezeichner nur, wenn der Leser sie selbst verwenden muss, etwa bei einer umbenannten Konfigurationsoption oder einem Breaking Change.
+
+## Shared skills
+
+- For requests to merge a pull request and publish a release, read and follow [.skills/merge-pr-and-release/SKILL.md](.skills/merge-pr-and-release/SKILL.md). The skill is tool-independent and intended for all AI agents working with these company instructions.
